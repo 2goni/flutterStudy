@@ -299,11 +299,11 @@ class Body extends StatelessWidget {
       
       // child: Column( //컨테이너 비율
       //   children: [
-      //     Flexible(flex:1, child: Container( //Flexible 차지할수있는 최대 크기만큼 차지 flex로 비율 정하기
+      //     Flexible(flex:1, child: Container( //Flexible //Flexible 차지할수있는 만큼만 차지 (자식크기 상관있음)
       //       color: Colors.red,
       //       height: 100,
       //     )),
-      //     Expanded(flex:2, child: Container( //Expanded 자식 크기와 상관없음
+      //     Expanded(flex:2, child: Container( //Expanded 차지할수있는 최대한 차지 (자식 크기와 상관없음)
       //       color: Colors.blue,
       //       height: 100,
       //     ))
