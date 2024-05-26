@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,11 +9,27 @@ void main() {
         appBar: AppBar(
           title: Text('제스쳐'),
           backgroundColor: Colors.amber,
+=======
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: SafeArea(
+      child: Scaffold(
+        //도화지 위젯
+        appBar: AppBar(
+          title: Text('Study to Container!'),
+          backgroundColor: Colors.blue,
+>>>>>>> d929341ffcff1d849bd1463c688277aca57ad3c7
         ),
         body: Body(),
       ),
     ),
+<<<<<<< HEAD
   );
+=======
+  ));
+>>>>>>> d929341ffcff1d849bd1463c688277aca57ad3c7
 }
 
 class Body extends StatelessWidget {
@@ -22,16 +39,23 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+<<<<<<< HEAD
         TestCheckBox(),
         TestRadioButton(),
         TestSlider(),
         TestSwitch(),
         TestPopupMenu()
       ],
+=======
+        ExampleStateless(),
+        ExampleStateful(index: 5)
+      ]
+>>>>>>> d929341ffcff1d849bd1463c688277aca57ad3c7
     );
   }
 }
 
+<<<<<<< HEAD
 class TestCheckBox extends StatefulWidget {
   const TestCheckBox({super.key});
 
@@ -166,10 +190,75 @@ class _TestSwitchState extends State<TestSwitch> {
             value: value,
             onChanged: (newValue) => setState(() => value = newValue))
       ],
+=======
+class ExampleStateless extends StatelessWidget {
+  const ExampleStateless({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 1,
+      child: Container(
+        color: Colors.red,
+      ),
     );
   }
 }
 
+class ExampleStateful extends StatefulWidget {
+  final index;
+
+  const ExampleStateful({required this.index, super.key});
+  
+  @override
+  State<ExampleStateful> createState() => _ExampleStatefulState();
+}
+
+class _ExampleStatefulState extends State<ExampleStateful> {
+  late int _index;
+  late TextEditingController textEditingController;
+
+  @override
+  void initState() {
+    super.initState();
+    _index = widget.index;
+    textEditingController = TextEditingController();
+  }
+
+
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 1,
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            if(_index == 5) {
+              _index = 0;
+              return;
+            }
+            _index++;
+          });
+        },
+        child: Container(
+          color: Colors.blue.withOpacity(_index/5),
+          child: Center(
+            child: Text('$_index')
+          ),
+        ),
+      ),
+>>>>>>> d929341ffcff1d849bd1463c688277aca57ad3c7
+    );
+  }
+}
+
+<<<<<<< HEAD
 class TestPopupMenu extends StatefulWidget {
   const TestPopupMenu({super.key});
 
@@ -196,3 +285,7 @@ class _TestPopupMenuState extends State<TestPopupMenu> {
     );
   }
 }
+=======
+
+
+>>>>>>> d929341ffcff1d849bd1463c688277aca57ad3c7

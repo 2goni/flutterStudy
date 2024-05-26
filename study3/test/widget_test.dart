@@ -11,5 +11,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:study3/main.dart';
 
 void main() {
+<<<<<<< HEAD
 
+=======
+  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+
+  });
+>>>>>>> d929341ffcff1d849bd1463c688277aca57ad3c7
 }

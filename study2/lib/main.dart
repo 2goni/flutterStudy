@@ -1,14 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(
       MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('widget 상하 배치'),
-            backgroundColor: Colors.amber,
+        home: SafeArea(
+          child: Scaffold(
+            appBar: AppBar(
+              title: Text('widget 상하 배치'),
+              backgroundColor: Colors.amber,
+            ),
+            body: Body(),
           ),
-          body: Body(),
         ),
       ),
   );
@@ -133,161 +138,201 @@ class Body extends StatelessWidget {
       //   )]
       // ),
       
-      child: SingleChildScrollView( //컨테이너 스크롤
-        
-        // child: Column( //컨테이너 상하 스크롤
-        //   children: [
-        //     Container(
-        //       color: Colors.lightGreen,
-        //       width: double.infinity,
-        //       height: 100,
-        //       margin: EdgeInsets.symmetric(vertical: 10),
-        //     ),
-        //     Container(
-        //       color: Colors.lightGreen,
-        //       width: double.infinity,
-        //       height: 100,
-        //       margin: EdgeInsets.symmetric(vertical: 10),
-        //     ),
-        //     Container(
-        //       color: Colors.lightGreen,
-        //       width: double.infinity,
-        //       height: 100,
-        //       margin: EdgeInsets.symmetric(vertical: 10),
-        //     ),
-        //     Container(
-        //       color: Colors.lightGreen,
-        //       width: double.infinity,
-        //       height: 100,
-        //       margin: EdgeInsets.symmetric(vertical: 10),
-        //     ),
-        //     Container(
-        //       color: Colors.lightGreen,
-        //       width: double.infinity,
-        //       height: 100,
-        //       margin: EdgeInsets.symmetric(vertical: 10),
-        //     ),
-        //     Container(
-        //       color: Colors.lightGreen,
-        //       width: double.infinity,
-        //       height: 100,
-        //       margin: EdgeInsets.symmetric(vertical: 10),
-        //     ),
-        //     Container(
-        //       color: Colors.lightGreen,
-        //       width: double.infinity,
-        //       height: 100,
-        //       margin: EdgeInsets.symmetric(vertical: 10),
-        //     ),
-        //     Container(
-        //       color: Colors.lightGreen,
-        //       width: double.infinity,
-        //       height: 100,
-        //       margin: EdgeInsets.symmetric(vertical: 10),
-        //     ),
-        //     Container(
-        //       color: Colors.lightGreen,
-        //       width: double.infinity,
-        //       height: 100,
-        //       margin: EdgeInsets.symmetric(vertical: 10),
-        //     ),
-        //     Container(
-        //       color: Colors.lightGreen,
-        //       width: double.infinity,
-        //       height: 100,
-        //       margin: EdgeInsets.symmetric(vertical: 10),
-        //     ),
-        //     Container(
-        //       color: Colors.lightGreen,
-        //       width: double.infinity,
-        //       height: 100,
-        //       margin: EdgeInsets.symmetric(vertical: 10),
-        //     ),
-        //     Container(
-        //       color: Colors.lightGreen,
-        //       width: double.infinity,
-        //       height: 100,
-        //       margin: EdgeInsets.symmetric(vertical: 10),
-        //     ),
-        //   ],
-        // ),
+      // child: SingleChildScrollView( //컨테이너 스크롤
+      //
+      //   // child: Column( //컨테이너 상하 스크롤
+      //   //   children: [
+      //   //     Container(
+      //   //       color: Colors.lightGreen,
+      //   //       width: double.infinity,
+      //   //       height: 100,
+      //   //       margin: EdgeInsets.symmetric(vertical: 10),
+      //   //     ),
+      //   //     Container(
+      //   //       color: Colors.lightGreen,
+      //   //       width: double.infinity,
+      //   //       height: 100,
+      //   //       margin: EdgeInsets.symmetric(vertical: 10),
+      //   //     ),
+      //   //     Container(
+      //   //       color: Colors.lightGreen,
+      //   //       width: double.infinity,
+      //   //       height: 100,
+      //   //       margin: EdgeInsets.symmetric(vertical: 10),
+      //   //     ),
+      //   //     Container(
+      //   //       color: Colors.lightGreen,
+      //   //       width: double.infinity,
+      //   //       height: 100,
+      //   //       margin: EdgeInsets.symmetric(vertical: 10),
+      //   //     ),
+      //   //     Container(
+      //   //       color: Colors.lightGreen,
+      //   //       width: double.infinity,
+      //   //       height: 100,
+      //   //       margin: EdgeInsets.symmetric(vertical: 10),
+      //   //     ),
+      //   //     Container(
+      //   //       color: Colors.lightGreen,
+      //   //       width: double.infinity,
+      //   //       height: 100,
+      //   //       margin: EdgeInsets.symmetric(vertical: 10),
+      //   //     ),
+      //   //     Container(
+      //   //       color: Colors.lightGreen,
+      //   //       width: double.infinity,
+      //   //       height: 100,
+      //   //       margin: EdgeInsets.symmetric(vertical: 10),
+      //   //     ),
+      //   //     Container(
+      //   //       color: Colors.lightGreen,
+      //   //       width: double.infinity,
+      //   //       height: 100,
+      //   //       margin: EdgeInsets.symmetric(vertical: 10),
+      //   //     ),
+      //   //     Container(
+      //   //       color: Colors.lightGreen,
+      //   //       width: double.infinity,
+      //   //       height: 100,
+      //   //       margin: EdgeInsets.symmetric(vertical: 10),
+      //   //     ),
+      //   //     Container(
+      //   //       color: Colors.lightGreen,
+      //   //       width: double.infinity,
+      //   //       height: 100,
+      //   //       margin: EdgeInsets.symmetric(vertical: 10),
+      //   //     ),
+      //   //     Container(
+      //   //       color: Colors.lightGreen,
+      //   //       width: double.infinity,
+      //   //       height: 100,
+      //   //       margin: EdgeInsets.symmetric(vertical: 10),
+      //   //     ),
+      //   //     Container(
+      //   //       color: Colors.lightGreen,
+      //   //       width: double.infinity,
+      //   //       height: 100,
+      //   //       margin: EdgeInsets.symmetric(vertical: 10),
+      //   //     ),
+      //   //   ],
+      //   // ),
+      //
+      //   scrollDirection: Axis.horizontal,//컨테이너 좌우 스크롤
+      //   child: Row(
+      //     children: [
+      //       Container(
+      //         color: Colors.lightGreen,
+      //         height: double.infinity,
+      //         width: 100,
+      //         margin: EdgeInsets.symmetric(horizontal: 10),
+      //       ),
+      //       Container(
+      //         color: Colors.lightGreen,
+      //         height: double.infinity,
+      //         width: 100,
+      //         margin: EdgeInsets.symmetric(horizontal: 10),
+      //       ),
+      //       Container(
+      //         color: Colors.lightGreen,
+      //         height: double.infinity,
+      //         width: 100,
+      //         margin: EdgeInsets.symmetric(horizontal: 10),
+      //       ),
+      //       Container(
+      //         color: Colors.lightGreen,
+      //         height: double.infinity,
+      //         width: 100,
+      //         margin: EdgeInsets.symmetric(horizontal: 10),
+      //       ),
+      //       Container(
+      //         color: Colors.lightGreen,
+      //         height: double.infinity,
+      //         width: 100,
+      //         margin: EdgeInsets.symmetric(horizontal: 10),
+      //       ),
+      //       Container(
+      //         color: Colors.lightGreen,
+      //         height: double.infinity,
+      //         width: 100,
+      //         margin: EdgeInsets.symmetric(horizontal: 10),
+      //       ),
+      //       Container(
+      //         color: Colors.lightGreen,
+      //         height: double.infinity,
+      //         width: 100,
+      //         margin: EdgeInsets.symmetric(horizontal: 10),
+      //       ),
+      //       Container(
+      //         color: Colors.lightGreen,
+      //         height: double.infinity,
+      //         width: 100,
+      //         margin: EdgeInsets.symmetric(horizontal: 10),
+      //       ),
+      //       Container(
+      //         color: Colors.lightGreen,
+      //         height: double.infinity,
+      //         width: 100,
+      //         margin: EdgeInsets.symmetric(horizontal: 10),
+      //       ),
+      //       Container(
+      //         color: Colors.lightGreen,
+      //         height: double.infinity,
+      //         width: 100,
+      //         margin: EdgeInsets.symmetric(horizontal: 10),
+      //       ),
+      //       Container(
+      //         color: Colors.lightGreen,
+      //         height: double.infinity,
+      //         width: 100,
+      //         margin: EdgeInsets.symmetric(horizontal: 10),
+      //       ),
+      //       Container(
+      //         color: Colors.lightGreen,
+      //         height: double.infinity,
+      //         width: 100,
+      //         margin: EdgeInsets.symmetric(horizontal: 10),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+      
+      
+      // child: Column( //컨테이너 비율
+      //   children: [
+      //     Flexible(flex:1, child: Container( //Flexible //Flexible 차지할수있는 만큼만 차지 (자식크기 상관있음)
+      //       color: Colors.red,
+      //       height: 100,
+      //     )),
+      //     Expanded(flex:2, child: Container( //Expanded 차지할수있는 최대한 차지 (자식 크기와 상관없음)
+      //       color: Colors.blue,
+      //       height: 100,
+      //     ))
+      //   ],
+      // ),
 
-        scrollDirection: Axis.horizontal,//컨테이너 좌우 스크롤
-        child: Row(
-          children: [
-            Container(
-              color: Colors.lightGreen,
-              height: double.infinity,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              color: Colors.lightGreen,
-              height: double.infinity,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              color: Colors.lightGreen,
-              height: double.infinity,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              color: Colors.lightGreen,
-              height: double.infinity,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              color: Colors.lightGreen,
-              height: double.infinity,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              color: Colors.lightGreen,
-              height: double.infinity,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              color: Colors.lightGreen,
-              height: double.infinity,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              color: Colors.lightGreen,
-              height: double.infinity,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              color: Colors.lightGreen,
-              height: double.infinity,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              color: Colors.lightGreen,
-              height: double.infinity,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              color: Colors.lightGreen,
-              height: double.infinity,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Container(
-              color: Colors.lightGreen,
-              height: double.infinity,
-              width: 100,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-            ),
-          ],
+      // child: Stack( //위젯 쌓기
+      //   children: [
+      //     Positioned(child: Container(width: 400, height: 400, color: Colors.orange,)),
+      //     Container(width: 300, height: 300, color: Colors.yellow,),
+      //     Align(
+      //       // alignment: Alignment.center,
+      //       alignment: Alignment(0,0),
+      //       child: Container(width: 200, height: 200, color: Colors.blue,)
+      //     ),
+      //     Positioned(
+      //       bottom: 0,
+      //       right: 0,
+      //       child: Container(width: 100, height: 100, color: Colors.purple,)
+      //     ),
+      //   ],
+      // ),
+
+      child: Align(
+        alignment: Alignment.center,
+        child: Container(
+          color: Colors.purple,
+          width: 500,
+          height: 500,
         ),
       ),
     );
